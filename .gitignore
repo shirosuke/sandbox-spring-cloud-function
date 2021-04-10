@@ -24,3 +24,11 @@ hs_err_pid*
 
 # Built Files
 target
+
+# inteliJ
+.idea
+
+# Eclipse
+.settings
+.classpath
+.project

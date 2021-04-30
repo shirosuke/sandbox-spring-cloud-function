@@ -19,6 +19,11 @@ public class FunctionConfiguration {
 
 	@Bean
 	public Function<String, String> uppercase() {
-		return value -> value.toUpperCase();
+		return String::toUpperCase;
+	}
+
+	@Bean
+	public Function<String, Integer> wordcount() {
+		return String::length;
 	}
 }

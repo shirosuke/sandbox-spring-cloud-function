@@ -1,1 +1,1 @@
-spring.cloud.function.definition: uppercase
+spring.cloud.function.definition: eventinfo

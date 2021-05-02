@@ -15,16 +15,19 @@ Resources:
     Properties:
       CodeUri: .
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
-#      Events:
-#        MyFunctionScheduledEvent:
-#          Type: Schedule
-#          Properties:
-#            Schedule: rate(5 minute)
       Runtime: java11
+      Events:
+        ScheduledEvent:
+          Type: Schedule
+          Properties:
+            Schedule: "rate(5 minutes)"
+            Name: TestSchedule
+            Description: test schedule
       MemorySize: 512
       Environment:
         Variables:
           MAIN_CLASS: example.FunctionConfiguration
+      Tracing: Active
 
 Outputs:
   MyFunction:
